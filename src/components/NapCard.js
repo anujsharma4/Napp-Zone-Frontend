@@ -16,3 +16,4 @@ const NapCard = (props) => {
 }
 
 export default NapCard
+// <img src={`../images/${props.napObj.name}.jpg`} alt="logo" />

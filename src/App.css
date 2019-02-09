@@ -4,6 +4,8 @@
 
 img {
   border-radius: 50%;
+  max-width: 25%;
+  max-height: 25%;
 }
 
 .about {
