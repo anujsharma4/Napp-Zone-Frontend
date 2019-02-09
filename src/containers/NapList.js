@@ -11,6 +11,7 @@ class NapList extends React.Component {
           <NapCard
             key={napObj.id}
             napObj={napObj}
+            onSelectNap={this.props.onSelectNap}
           />)
         }
       </div>

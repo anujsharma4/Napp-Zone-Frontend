@@ -15,9 +15,9 @@ img {
 .ui.card {
   margin: 1em 10px 0 10px;
   display: inline-block;
-  /* width: 300px;
-  height: auto;
-  font-size: 1rem; */
+  width: 300px;
+  height: 300px;
+  /* font-size: 1rem; */
 }
 
 .App {

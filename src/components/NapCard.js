@@ -1,16 +1,14 @@
 import React from 'react'
 
 const NapCard = (props) => {
-  console.log(props.napObj.picture)
+  console.log(props.onSelectNap)
   return (
     <div className="ui card">
-    <div>
       <h3>{props.napObj.name}</h3>
       <img src={props.napObj.picture} alt="logo" />
       <h5>Location: {props.napObj.location}</h5>
+      <button data-nap-id={props.napObj.id}>More Info</button>
       <p>Description: {props.napObj.description}</p>
-    </div>
-    <br />
     </div>
   )
 }

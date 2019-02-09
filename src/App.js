@@ -6,7 +6,8 @@ import NapList from './containers/NapList'
 
 class App extends Component {
   state={
-    allNaps: []
+    allNaps: [],
+    selectedNapsite: null
   }
 
   componentDidMount() {
@@ -19,6 +20,10 @@ class App extends Component {
     })
   }
 
+  onSelectNap = (event) => {
+    console.log("selected")
+  }
+
   render() {
     return (
       <div>
@@ -29,6 +34,7 @@ class App extends Component {
         />
         <NapList
           napsArray={this.state.allNaps}
+          onSelectNap={this.onSelectNap}
         />
       </div>
     );
