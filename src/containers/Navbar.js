@@ -5,8 +5,8 @@ const Navbar = (props) => {
   return(
     <div className={`ui inverted ${props.color} menu`}>
         <a className="item" href={props.link} >
-        <img src={logo} width="160" alt="logo" />
           <h2 className="ui header">
+          <img src={logo} alt="logo" />
             <div className="content">{props.header}</div>
             <div className="sub header">{props.tagline}</div>
           </h2>
@@ -17,6 +17,8 @@ const Navbar = (props) => {
 
 export default Navbar
 
+
+  // <img src={logo} width="25" height="50" alt="logo" />
 
             // <i className={`${props.icon} icon`}></i>
 

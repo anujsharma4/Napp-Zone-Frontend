@@ -12,8 +12,10 @@ class App extends Component {
   componentDidMount() {
     fetch('http://localhost:3000/napsites')
     .then(res => res.json())
-    .then(data => {
-      console.log(data)
+    .then(napArray => {
+      this.setState({
+        allNaps: napArray
+      })
     })
   }
 
@@ -26,7 +28,7 @@ class App extends Component {
           header="NappZone"
         />
         <NapList
-          napsArray={this.showNaps}
+          napsArray={this.state.allNaps}
         />
       </div>
     );

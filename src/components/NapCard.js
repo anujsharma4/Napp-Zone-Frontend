@@ -1,10 +1,15 @@
 import React from 'react'
 
 const NapCard = (props) => {
-
+  console.log(props.napObj)
   return (
     <div>
-      <h3>NapCard</h3>
+    <div>
+      <h3>{props.napObj.name}</h3>
+      <h5>Location: {props.napObj.location}</h5>
+      <p>Description: {props.napObj.description}</p>
+    </div>
+    <br />
     </div>
   )
 }
