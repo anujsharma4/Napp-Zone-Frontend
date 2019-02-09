@@ -2,15 +2,33 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './containers/Navbar'
+import NapList from './containers/NapList'
 
 class App extends Component {
+  state={
+    allNaps: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/napsites')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+  }
+
   render() {
     return (
-      <Navbar
-        link="https://www.sleep.org/articles/how-long-to-nap/"
-        color="blue"
-        ui image="../images/SleepingGuy.png"
-      />
+      <div>
+        <Navbar
+          link="https://www.sleep.org/articles/how-long-to-nap/"
+          color="blue"
+          header="NappZone"
+        />
+        <NapList
+          napsArray={this.showNaps}
+        />
+      </div>
     );
   }
 }

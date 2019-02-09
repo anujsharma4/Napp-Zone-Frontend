@@ -1,9 +1,11 @@
 import React from 'react'
+import logo from '../images/SleepingGuy.png';
 
 const Navbar = (props) => {
   return(
     <div className={`ui inverted ${props.color} menu`}>
         <a className="item" href={props.link} >
+        <img src={logo} width="160" alt="logo" />
           <h2 className="ui header">
             <div className="content">{props.header}</div>
             <div className="sub header">{props.tagline}</div>
