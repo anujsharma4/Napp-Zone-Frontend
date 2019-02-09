@@ -1,9 +1,9 @@
 import React from 'react'
 
 const NapCard = (props) => {
-  console.log(props.napObj)
+  console.log(props.napObj.picture)
   return (
-    <div>
+    <div className="ui card">
     <div>
       <h3>{props.napObj.name}</h3>
       <img src={props.napObj.picture} alt="logo" />
