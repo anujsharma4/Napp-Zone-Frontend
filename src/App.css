@@ -44,6 +44,16 @@ img {
   font-size: large;
 }
 
+.ui.cards>.card {
+  text-align: -webkit-center;
+}
+
+h1 {
+    min-height: 1rem;
+    font-size: 2rem;
+    text-align: -webkit-center;
+}
+
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
