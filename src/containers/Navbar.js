@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../images/SleepingGuy.png';
+import {Link} from 'react-router-dom'
 
 const Navbar = (props) => {
   return(
@@ -11,6 +12,8 @@ const Navbar = (props) => {
             <div className="sub header">{props.tagline}</div>
           </h2>
         </a>
+        <Link to="/" className="item">Home</Link>
+        <Link to="/napsites" className="item">Napsites</Link>
     </div>
   )
 }

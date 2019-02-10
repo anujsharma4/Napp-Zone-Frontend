@@ -9,7 +9,7 @@ img {
 }
 
 .about {
-  text-align: left;
+  text-align: center;
 }
 
 .ui.card {
@@ -21,7 +21,7 @@ img {
 }
 
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {

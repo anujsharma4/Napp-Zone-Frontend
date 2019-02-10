@@ -3,14 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './containers/Navbar'
 import NapList from './containers/NapList'
-import About from './components/About'
+import Home from './components/Home'
 import NapDetails from './components/NapDetails'
 import {Route} from 'react-router-dom'
 
 class App extends Component {
   state={
     allNaps: [],
-    selectedNapsite: null
+    selectedNapsite: null,
+    myNaps: []
   }
 
   componentDidMount() {
@@ -24,18 +25,23 @@ class App extends Component {
   }
 
   onSelectNap = (event) => {
-    console.log('selected')
+    let id = parseInt(event.target.dataset.napId)
+    let newNap = this.state.allNaps.find(nap => nap.id === id)
+
+    this.setState({
+      selectedNapsite: newNap
+    })
   }
 
   render() {
     return (
-      <div classname="App">
+      <div className="App">
         <Navbar
           link="https://www.sleep.org/articles/how-long-to-nap/"
           color="blue"
           header="NappZone"
         />
-        <Route exact={true} path="/about" component={About}/>
+        <Route exact={true} path="/" component={Home}/>
         <Route exact={true} path="/napsites" render={() => {
           return (
             <NapList
@@ -43,6 +49,11 @@ class App extends Component {
               onSelectNap={this.onSelectNap}
             />
           )
+        }} />
+        <Route exact={true} path="/napsites/:id" render={(props) => {
+          let napIdInUrl = parseInt(props.match.params.id)
+          let nap = this.state.allNaps.find(nap => nap.id === napIdInUrl)
+          return (<NapDetails nap={nap} />)
         }} />
       </div>
     )

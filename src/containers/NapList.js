@@ -3,7 +3,6 @@ import NapCard from '../components/NapCard'
 
 class NapList extends React.Component {
   render() {
-    console.log(this.props.napsArray)
     return (
       <div>
         <h1>Choose your zone:</h1>

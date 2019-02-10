@@ -1,7 +1,6 @@
 import React from 'react'
 
 const NapDetails = (props) => {
-  console.log(props.nap)
   return props.nap ?
     <div className="ui card">
       <div>

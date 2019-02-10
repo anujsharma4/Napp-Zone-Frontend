@@ -1,10 +1,10 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const NapCard = (props) => {
-  console.log(props.onSelectNap)
   return (
-
-    <div className="ui card">
+  <div className="ui link cards">
+    <div className="card">
       <div className="image">
         <img src={props.napObj.picture} alt="logo" />
       </div>
@@ -14,10 +14,13 @@ const NapCard = (props) => {
         </div>
         <div className="meta text-wrap">
           <h5>Location: {props.napObj.location}</h5>
-          <button data-nap-id={props.napObj.id}>More Info</button>
+          <Link to={`/napsites/${props.napObj.id}`}>
+            <button data-nap-id={props.napObj.id}>Details</button>
+          </Link>
         </div>
       </div>
     </div>
+  </div>
 
   )
 }
