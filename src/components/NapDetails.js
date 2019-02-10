@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const NapDetails = (props) => {
   return props.nap ?
@@ -9,12 +10,15 @@ const NapDetails = (props) => {
       </div>
       <div className="content">
         <div className="header">
-          <h3>{props.nap.name}</h3>
+          <h2>{props.nap.name}</h2>
         </div>
         <div className="meta text-wrap">
           <h3>Location: {props.nap.location}</h3>
           <h4>Description: {props.nap.description}</h4>
           <h4>Safety: {props.nap.safety}</h4>
+          <Link to={`/napsites`}>
+            <button>Back</button>
+          </Link>
         </div>
       </div>
     </div>

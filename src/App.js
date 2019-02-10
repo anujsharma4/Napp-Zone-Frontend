@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './containers/Navbar'
 import NapList from './containers/NapList'
 import Home from './components/Home'
 import NapDetails from './components/NapDetails'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 class App extends Component {
   state={
@@ -41,20 +40,22 @@ class App extends Component {
           color="blue"
           header="NappZone"
         />
-        <Route exact={true} path="/" component={Home}/>
-        <Route exact={true} path="/napsites" render={() => {
-          return (
-            <NapList
-              napsArray={this.state.allNaps}
-              onSelectNap={this.onSelectNap}
-            />
-          )
-        }} />
-        <Route exact={true} path="/napsites/:id" render={(props) => {
-          let napIdInUrl = parseInt(props.match.params.id)
-          let nap = this.state.allNaps.find(nap => nap.id === napIdInUrl)
-          return (<NapDetails nap={nap} />)
-        }} />
+        <Switch>
+          <Route path="/napsites/:id" render={(props) => {
+            let napIdInUrl = parseInt(props.match.params.id)
+            let nap = this.state.allNaps.find(nap => nap.id === napIdInUrl)
+            return (<NapDetails nap={nap} />)
+          }} />
+          <Route path="/napsites" render={() => {
+            return (
+              <NapList
+                napsArray={this.state.allNaps}
+                onSelectNap={this.onSelectNap}
+              />
+            )
+          }} />
+          <Route component={Home}/>
+        </Switch>
       </div>
     )
   }
