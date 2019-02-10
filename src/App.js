@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './containers/Navbar'
 import NapList from './containers/NapList'
+import About from './components/About'
+import {Route} from 'react-router-dom'
 
 class App extends Component {
   state={
@@ -26,22 +28,32 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div classname="App">
         <Navbar
           link="https://www.sleep.org/articles/how-long-to-nap/"
           color="blue"
           header="NappZone"
         />
-        <NapList
-          napsArray={this.state.allNaps}
-          onSelectNap={this.onSelectNap}
-        />
+        <Route exact={true} path="/about" component={About}/>
+        <Route exact={true} path="/napsites" render={() => {
+          return (
+            <NapList
+              napsArray={this.state.allNaps}
+              onSelectNap={this.onSelectNap}
+            />
+          )
+        }}/>
       </div>
-    );
+    )
   }
 }
 
 export default App;
+
+// <NapList
+//   napsArray={this.state.allNaps}
+//   onSelectNap={this.onSelectNap}
+// />
 
 // <div className="App">
 //   <header className="App-header">
