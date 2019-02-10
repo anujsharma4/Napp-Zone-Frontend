@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './containers/Navbar'
 import NapList from './containers/NapList'
 import About from './components/About'
+import NapDetails from './components/NapDetails'
 import {Route} from 'react-router-dom'
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
   }
 
   onSelectNap = (event) => {
-    console.log("selected")
+    console.log('selected')
   }
 
   render() {
@@ -42,13 +43,18 @@ class App extends Component {
               onSelectNap={this.onSelectNap}
             />
           )
-        }}/>
+        }} />
       </div>
     )
   }
 }
 
 export default App;
+
+//Route for displaying single nap
+// <Route exact={true} path="/napsites/:id" render={() => {
+//   return (<NapDetails nap={this.state.selectedNapsite} />)
+// }} />
 
 // <NapList
 //   napsArray={this.state.allNaps}
