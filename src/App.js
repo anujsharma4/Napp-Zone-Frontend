@@ -7,12 +7,14 @@ import NapDetails from './components/NapDetails'
 import {Route, Switch} from 'react-router-dom'
 import MyNapList from './containers/MyNapList'
 import Login from "./containers/Login"
+import { Button, ButtonToolbar } from "react-bootstrap";
 
 class App extends Component {
   state={
     allNaps: [],
     selectedNapsite: null,
-    myNaps: []
+    myNaps: [],
+    modalShow: false
   }
 
   componentDidMount() {
@@ -49,6 +51,8 @@ class App extends Component {
   }
 
   render() {
+    let modalClose = () => this.setState({ modalShow: false });
+
     return (
       <div className="App">
         <Navbar
@@ -81,7 +85,20 @@ class App extends Component {
               />
             )
           }} />
-          <Route path="/login" component={Login} />
+          <ButtonToolbar>
+        <Button
+          variant="primary"
+          onClick={() => this.setState({ modalShow: true })}
+        >
+          Launch vertically centered modal
+        </Button>
+
+        <Login
+          show={this.state.modalShow}
+          onHide={modalClose}
+        />
+      </ButtonToolbar>
+          // <Route path="/login" component={Login} />
           <Route component={Home}/>
         </Switch>
       </div>
