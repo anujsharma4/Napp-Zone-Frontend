@@ -6,6 +6,7 @@ import Home from './components/Home'
 import NapDetails from './components/NapDetails'
 import {Route, Switch} from 'react-router-dom'
 import MyNapList from './containers/MyNapList'
+import Login from "./containers/Login"
 
 class App extends Component {
   state={
@@ -80,6 +81,7 @@ class App extends Component {
               />
             )
           }} />
+          <Route path="/login" component={Login} />
           <Route component={Home}/>
         </Switch>
       </div>
