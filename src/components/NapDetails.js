@@ -16,6 +16,7 @@ const NapDetails = (props) => {
           <h3>Location: {props.nap.location}</h3>
           <h4>Description: {props.nap.description}</h4>
           <h4>Safety: {props.nap.safety}</h4>
+          <button onClick={() => props.setSelectedNap(props.nap)}>Nap here</button>
           <Link to={`/napsites`}>
             <button>Back</button>
           </Link>

@@ -5,6 +5,7 @@ import NapList from './containers/NapList'
 import Home from './components/Home'
 import NapDetails from './components/NapDetails'
 import {Route, Switch} from 'react-router-dom'
+import MyNapList from './containers/MyNapList'
 
 class App extends Component {
   state={
@@ -32,6 +33,18 @@ class App extends Component {
     })
   }
 
+  setSelectedNap = (nap) => {
+    if (!this.state.myNaps.includes(nap)){
+      this.setState({
+        myNaps: [...this.state.myNaps, nap]
+      })
+    }
+  }
+
+  pickNap = () => {
+    console.log("nap picked")
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,17 +53,28 @@ class App extends Component {
           color="blue"
           header="NappZone"
         />
+        <Route path="/mynaps" render={() => {
+          return(
+            <MyNapList
+              setSelectedNap={this.setSelectedNap}
+              myNaps={this.state.myNaps}
+            />
+          )
+        }}/>
         <Switch>
           <Route path="/napsites/:id" render={(props) => {
             let napIdInUrl = parseInt(props.match.params.id)
             let nap = this.state.allNaps.find(nap => nap.id === napIdInUrl)
-            return (<NapDetails nap={nap} />)
+            return (<NapDetails
+              setSelectedNap={this.setSelectedNap}
+              nap={nap} />)
           }} />
           <Route path="/napsites" render={() => {
             return (
               <NapList
                 napsArray={this.state.allNaps}
                 onSelectNap={this.onSelectNap}
+                setSelectedNap={this.setSelectedNap}
               />
             )
           }} />

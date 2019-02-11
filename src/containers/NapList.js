@@ -11,6 +11,7 @@ class NapList extends React.Component {
             key={napObj.id}
             napObj={napObj}
             onSelectNap={this.props.onSelectNap}
+            setSelectedNap={this.props.setSelectedNap}
           />)
         }
       </div>
