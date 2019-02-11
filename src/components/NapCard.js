@@ -3,14 +3,13 @@ import {Link} from 'react-router-dom'
 
 const NapCard = (props) => {
   return (
-  <div className="ui link cards">
     <div className="card">
       <div className="image">
-        <img src={props.napObj.picture} alt="logo" />
+        <img src={props.napObj.picture} />
       </div>
       <div className="content">
         <div className="header">
-          <h3>{props.napObj.name}</h3>
+          {props.napObj.name}
         </div>
         <div className="meta text-wrap">
           <h5>Location: {props.napObj.location}</h5>
@@ -20,7 +19,6 @@ const NapCard = (props) => {
         </div>
       </div>
     </div>
-  </div>
 
   )
 }
