@@ -1,8 +1,9 @@
 import React from 'react'
 import NapCard from '../components/NapCard'
-
+import { Message } from 'semantic-ui-react'
+// {(!props.myNaps[0].empty ? )}
 const MyNapList = (props) => {
-  console.log(props.myNaps)
+  console.log(!props.myNaps[0])
   return (
     <div>
       <h1>My naps:</h1>
@@ -22,6 +23,8 @@ const MyNapList = (props) => {
 
 export default MyNapList
 
+//message when new nap added
+  // {(props.myNaps[0]) ? <Message compact>{props.myNaps[0].name} location added!</Message> : null}
 
 // {this.props.myBots.length < 1 ? null :
 //   this.props.myBots.map(bot =>

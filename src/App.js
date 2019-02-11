@@ -85,19 +85,6 @@ class App extends Component {
               />
             )
           }} />
-          <ButtonToolbar>
-        <Button
-          variant="primary"
-          onClick={() => this.setState({ modalShow: true })}
-        >
-          Launch vertically centered modal
-        </Button>
-
-        <Login
-          show={this.state.modalShow}
-          onHide={modalClose}
-        />
-      </ButtonToolbar>
           // <Route path="/login" component={Login} />
           <Route component={Home}/>
         </Switch>
@@ -107,6 +94,20 @@ class App extends Component {
 }
 
 export default App;
+
+// <ButtonToolbar>
+//   <Button
+//     variant="primary"
+//     onClick={() => this.setState({ modalShow: true })}
+//   >
+//     Launch vertically centered modal
+//   </Button>
+//
+//   <Login
+//     show={this.state.modalShow}
+//     onHide={modalClose}
+//   />
+// </ButtonToolbar>
 
 //Route for displaying single nap
 // <Route exact={true} path="/napsites/:id" render={() => {
