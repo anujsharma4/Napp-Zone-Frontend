@@ -7,8 +7,10 @@ const Home = (props) => {
     <div className="homepic">
       <div>
       <Header as='h1' icon="bed" className="inverted bed icon" content='We know the optimal nap time is 45 min... but what about the optimal nap zone?' />
+      <br />
+      <Header as='h2' className="inverted bed icon" content='Look no further! Introducing...' />
       </div>
-      <img alt="logo" src={logo}/>
+      <img className="homepic" alt="logo" src={logo}/>
         <video className="background-video" loop muted autoPlay playsInline poster= "https://media.giphy.com/media/GC7C2Fi902BDG/giphy.gif">
           <source src="https://media.giphy.com/media/GC7C2Fi902BDG/giphy.mp4" type="video/mp4"/>
         </video>

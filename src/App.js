@@ -46,8 +46,8 @@ class App extends Component {
     }
   }
 
-  pickNap = () => {
-    console.log("nap picked")
+  handleRemoveNap = () => {
+    console.log("removed")
   }
 
   render() {
@@ -71,6 +71,7 @@ class App extends Component {
           <Route path="/mynaps" render={() => {
             return(
               <MyNapList
+                clickNap={this.handleRemoveNap}
                 setSelectedNap={this.setSelectedNap}
                 myNaps={this.state.myNaps}
               />

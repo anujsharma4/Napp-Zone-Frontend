@@ -16,12 +16,14 @@ const NapCard = (props) => {
           <Link to={`/napsites/${props.napObj.id}`}>
             <button data-nap-id={props.napObj.id}>Details</button>
           </Link>
+          {!!props.clickNap ? <button>Remove</button> : null}
         </div>
       </div>
     </div>
-
   )
 }
 
 export default NapCard
+
+// onClick={() => props.clickNap(props.napObj)}
 // <img src={`../images/${props.napObj.name}.jpg`} alt="logo" />
