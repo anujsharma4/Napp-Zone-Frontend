@@ -1,12 +1,15 @@
 import React from 'react'
 import NapCard from '../components/NapCard'
-import { Message } from 'semantic-ui-react'
+import { Message, Header } from 'semantic-ui-react'
 // {(!props.myNaps[0].empty ? )}
 const MyNapList = (props) => {
   console.log(!props.myNaps[0])
   return (
     <div>
-      <h1>My naps:</h1>
+      <Header as='h1' icon="bed" className="inverted" content='My Naps:' />
+        <video className="background-video" loop muted autoPlay playsInline poster= "https://media.giphy.com/media/U3qYN8S0j3bpK/source.gif">
+          <source src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.mp4" type="video/mp4"/>
+        </video>
         <div className="ui link cards">
         {props.myNaps.map((napObj) =>
           <NapCard

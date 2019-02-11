@@ -19,7 +19,7 @@ const NapDetails = (props) => {
           <h4>Safety: {props.nap.safety}</h4>
           <Link to={'/mynaps'}>
             <Button animated='vertical'>
-              <Button.Content hidden onClick={() => props.setSelectedNap(props.nap)}>Nap Here</Button.Content>
+              <Button.Content hidden onClick={() => props.setSelectedNap(props.nap)}>Nap</Button.Content>
               <Button.Content visible>
                 <Icon name='cloud' />
               </Button.Content>
