@@ -11,7 +11,7 @@ const NapCard = (props) => {
         <div className="header">
           {props.napObj.name}
         </div>
-        <div className="meta text-wrap">
+        <div className="description">
           <h5>Location: {props.napObj.location}</h5>
           <Link to={`/napsites/${props.napObj.id}`}>
             <button data-nap-id={props.napObj.id}>Details</button>
