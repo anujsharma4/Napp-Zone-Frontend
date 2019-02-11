@@ -38,6 +38,8 @@ class App extends Component {
       this.setState({
         myNaps: [...this.state.myNaps, nap]
       })
+    } else {
+      alert("Already added!")
     }
   }
 
@@ -53,14 +55,6 @@ class App extends Component {
           color="blue"
           header="NappZone"
         />
-        <Route path="/mynaps" render={() => {
-          return(
-            <MyNapList
-              setSelectedNap={this.setSelectedNap}
-              myNaps={this.state.myNaps}
-            />
-          )
-        }}/>
         <Switch>
           <Route path="/napsites/:id" render={(props) => {
             let napIdInUrl = parseInt(props.match.params.id)
@@ -69,6 +63,14 @@ class App extends Component {
               setSelectedNap={this.setSelectedNap}
               nap={nap} />)
           }} />
+          <Route path="/mynaps" render={() => {
+            return(
+              <MyNapList
+                setSelectedNap={this.setSelectedNap}
+                myNaps={this.state.myNaps}
+              />
+            )
+          }}/>
           <Route path="/napsites" render={() => {
             return (
               <NapList

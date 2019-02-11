@@ -1,7 +1,6 @@
 import React from 'react'
 
 const MyNapList = () => {
-  console.log(this.props)
   return (
     <div className="ui segment inverted olive my-naps">
         <div className="ui five column grid">
