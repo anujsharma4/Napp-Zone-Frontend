@@ -1,14 +1,20 @@
 import React from 'react'
+import NapCard from '../components/NapCard'
 
 const MyNapList = (props) => {
+  console.log(props.myNaps)
   return (
-    <div className="ui segment inverted olive my-naps">
-        <div className="ui five column grid">
-          <div className="row nap-list-row">
-            <p>hey</p>
-          </div>
-        </div>
-      </div>
+    <div>
+    <h1>My naps:</h1>
+    {props.myNaps.map((napObj) =>
+      <NapCard
+        key={napObj.id}
+        napObj={napObj}
+        onSelectNap={props.onSelectNap}
+        setSelectedNap={props.setSelectedNap}
+      />)
+    }
+    </div>
   )
 }
 
