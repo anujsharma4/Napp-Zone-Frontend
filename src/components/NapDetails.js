@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { Button, Icon } from 'semantic-ui-react'
 
 const NapDetails = (props) => {
   return props.nap ?
@@ -17,10 +18,21 @@ const NapDetails = (props) => {
           <h4>Description: {props.nap.description}</h4>
           <h4>Safety: {props.nap.safety}</h4>
           <Link to={'/mynaps'}>
-            <button onClick={() => props.setSelectedNap(props.nap)}>Nap here</button>
+            <Button animated='vertical'>
+              <Button.Content hidden onClick={() => props.setSelectedNap(props.nap)}>Nap Here</Button.Content>
+              <Button.Content visible>
+                <Icon name='cloud' />
+              </Button.Content>
+            </Button>
           </Link>
           <Link to={`/napsites`}>
-            <button>Back</button>
+            <Button animated>
+              <Button.Content visible>Back</Button.Content>
+              <Button.Content hidden>
+                <Icon name='arrow left' />
+              </Button.Content>
+            </Button>
+
           </Link>
         </div>
       </div>
@@ -31,6 +43,8 @@ const NapDetails = (props) => {
 }
 
 export default NapDetails
+
+
 
 // <div className="ui card">
 //   <div>

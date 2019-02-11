@@ -52,7 +52,7 @@ class App extends Component {
       <div className="App">
         <Navbar
           link="https://www.sleep.org/articles/how-long-to-nap/"
-          color="blue"
+          color= "orange"
           header="NappZone"
         />
         <Switch>

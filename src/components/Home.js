@@ -1,9 +1,10 @@
 import React from 'react'
+import { Header } from 'semantic-ui-react'
 
 const Home = (props) => {
   return(
     <div>
-      <h1>Home bitch</h1>
+      <Header as='h1' icon='bed' content='Home' />
     </div>
   )
 }
