@@ -16,7 +16,13 @@ const NapCard = (props) => {
           <Link to={`/napsites/${props.napObj.id}`}>
             <button data-nap-id={props.napObj.id}>Details</button>
           </Link>
-          {!!props.clickNap ? <button>Remove</button> : null}
+          {!!props.clickNap ?
+            <Link to={`/mynaps`}>
+              <button onClick={() => props.clickNap(props.napObj)}>Remove</button> 
+            </Link>
+            :
+            null
+          }
         </div>
       </div>
     </div>

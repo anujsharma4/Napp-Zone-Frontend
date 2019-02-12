@@ -46,8 +46,13 @@ class App extends Component {
     }
   }
 
-  handleRemoveNap = () => {
-    console.log("removed")
+  handleRemoveNap = (napObj) => {
+    let copyOfMyNaps = [...this.state.myNaps]
+    let index = copyOfMyNaps.findIndex(nap => nap === napObj)
+    copyOfMyNaps.splice(index, 1)
+    this.setState({
+      myNaps: copyOfMyNaps
+    })
   }
 
   render() {
