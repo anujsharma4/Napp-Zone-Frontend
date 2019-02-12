@@ -5,7 +5,7 @@ import { Message, Header } from 'semantic-ui-react'
 const MyNapList = (props) => {
   return (
     <div>
-      <Header as='h1' icon="bed" className="inverted" content='My Naps:' />
+      <Header as='h1' icon="bed" onClick={() => console.log("wake up")} className="inverted" content='My Naps:' />
         <video className="background-video" loop muted autoPlay playsInline poster= "https://media.giphy.com/media/U3qYN8S0j3bpK/source.gif">
           <source src="https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.mp4" type="video/mp4"/>
         </video>
