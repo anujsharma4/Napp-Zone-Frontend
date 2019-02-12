@@ -9,7 +9,7 @@ const NapCard = (props) => {
         <img alt="napspace" src={props.napObj.picture} />
       </div>
       <div className="content">
-        <div class="ui orange header">
+        <div className="ui orange header">
           {props.napObj.name}
         </div>
         <div className="description">
