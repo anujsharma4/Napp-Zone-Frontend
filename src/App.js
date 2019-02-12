@@ -13,6 +13,7 @@ class App extends Component {
     allNaps: [],
     selectedNapsite: null,
     myNaps: [],
+    rating: 1
   }
 
   componentDidMount() {
@@ -53,6 +54,12 @@ class App extends Component {
     })
   }
 
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({
+      rating: nextValue
+    });
+  }
+
   render() {
     // let modalClose = () => this.setState({ modalShow: false });
 
@@ -69,7 +76,11 @@ class App extends Component {
             let nap = this.state.allNaps.find(nap => nap.id === napIdInUrl)
             return (<NapDetails
               setSelectedNap={this.setSelectedNap}
-              nap={nap} />)
+              nap={nap}
+              onStarClick={this.onStarClick}
+              rating={this.state.rating}
+              />
+            )
           }} />
           <Route path="/mynaps" render={() => {
             return(
