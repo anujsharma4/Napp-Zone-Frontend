@@ -6,15 +6,13 @@ import Home from './components/Home'
 import NapDetails from './components/NapDetails'
 import {Route, Switch} from 'react-router-dom'
 import MyNapList from './containers/MyNapList'
-import Login from "./containers/Login"
-import { Button, ButtonToolbar } from "react-bootstrap";
+// import Login from "./containers/Login"
 
 class App extends Component {
   state={
     allNaps: [],
     selectedNapsite: null,
     myNaps: [],
-    modalShow: false
   }
 
   componentDidMount() {
@@ -56,7 +54,7 @@ class App extends Component {
   }
 
   render() {
-    let modalClose = () => this.setState({ modalShow: false });
+    // let modalClose = () => this.setState({ modalShow: false });
 
     return (
       <div className="App">
@@ -81,7 +79,7 @@ class App extends Component {
                 myNaps={this.state.myNaps}
               />
             )
-          }}/>
+          }} />
           <Route path="/napsites" render={() => {
             return (
               <NapList
@@ -91,7 +89,6 @@ class App extends Component {
               />
             )
           }} />
-          // <Route path="/login" component={Login} />
           <Route component={Home}/>
         </Switch>
       </div>
@@ -101,6 +98,7 @@ class App extends Component {
 
 export default App;
 
+// <Route path="/login" component={Login} />
 // <ButtonToolbar>
 //   <Button
 //     variant="primary"

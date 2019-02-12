@@ -1,6 +1,6 @@
 import React from 'react'
 import NapCard from '../components/NapCard'
-import { Message, Header } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 // {(!props.myNaps[0].empty ? )}
 const MyNapList = (props) => {
   return (
