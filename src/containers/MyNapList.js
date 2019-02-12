@@ -3,7 +3,6 @@ import NapCard from '../components/NapCard'
 import { Message, Header } from 'semantic-ui-react'
 // {(!props.myNaps[0].empty ? )}
 const MyNapList = (props) => {
-  console.log(props.clickNap)
   return (
     <div>
       <Header as='h1' icon="bed" className="inverted" content='My Naps:' />

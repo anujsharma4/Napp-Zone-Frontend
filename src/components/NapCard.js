@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 
 const NapCard = (props) => {
   return (
-    <div className="card">
+    <div className="orange card">
       <div className="image">
-        <img src={props.napObj.picture} />
+        <img alt="napspace" src={props.napObj.picture} />
       </div>
       <div className="content">
         <div className="header">
@@ -18,7 +18,7 @@ const NapCard = (props) => {
           </Link>
           {!!props.clickNap ?
             <Link to={`/mynaps`}>
-              <button onClick={() => props.clickNap(props.napObj)}>Remove</button> 
+              <button onClick={() => props.clickNap(props.napObj)}>Remove</button>
             </Link>
             :
             null

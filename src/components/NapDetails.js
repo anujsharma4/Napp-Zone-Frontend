@@ -1,22 +1,23 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Button, Icon } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 
 const NapDetails = (props) => {
   return props.nap ?
   <div className="ui link cards">
-    <div className="card">
+    <div className="blue card">
       <div className="image">
         <img src={props.nap.picture} alt="logo" />
       </div>
       <div className="content">
         <div className="header">
-          <h2>{props.nap.name}</h2>
+          <Header as='h3'>{props.nap.name}</Header>
         </div>
-        <div className="meta text-wrap">
-          <h3>Location: {props.nap.location}</h3>
-          <h4>Description: {props.nap.description}</h4>
-          <h4>Safety: {props.nap.safety}</h4>
+        <div className="description">
+          <Header as='h4'>Location: {props.nap.location}</Header>
+          <Header as='h4'>Description: {props.nap.description}</Header>
+          <Header as='h4'>Safety: {props.nap.safety}</Header>
           <Link to={'/mynaps'}>
             <Button animated='vertical'>
               <Button.Content hidden onClick={() => props.setSelectedNap(props.nap)}>Nap</Button.Content>
@@ -39,7 +40,7 @@ const NapDetails = (props) => {
     </div>
   </div>
     :
-    null
+    <Header as='h1'>First Header</Header>
 }
 
 export default NapDetails
