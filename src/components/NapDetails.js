@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import { Button, Icon } from 'semantic-ui-react'
 import { Header } from 'semantic-ui-react'
 import StarRatingComponent from 'react-star-rating-component';
-import { Divider } from 'semantic-ui-react'
 
 const NapDetails = (props) => {
   return props.nap ?
@@ -23,10 +22,10 @@ const NapDetails = (props) => {
           </div>
           <div className="description">
             <Header as='h4'>Location: {props.nap.location}</Header>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
             <Header as='h4'>Description: {props.nap.description}</Header>
             <Header as='h4'>Safety: {props.nap.safety}</Header>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
             <div>
                <Header as='h4'>Rate this location:</Header>
                <StarRatingComponent

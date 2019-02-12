@@ -13,6 +13,7 @@ const NapCard = (props) => {
         </div>
         <div className="description">
           <h5>Location: {props.napObj.location}</h5>
+          <div className="ui divider"></div>
           <Link to={`/napsites/${props.napObj.id}`}>
             <button data-nap-id={props.napObj.id}>Details</button>
           </Link>
