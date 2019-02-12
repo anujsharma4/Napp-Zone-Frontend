@@ -69,6 +69,18 @@ h1 {
     text-align: -webkit-center;
 }
 
+.ui.cards>.card>.image>img {
+    display: block;
+    width: 59%;
+    height: auto;
+    border-radius: .2857rem .2857rem 0 0;
+    border: none;
+}
+
+div {
+  justify-content: center;
+}
+
 /* body {
 
   background-image: url("images/Logo.png");
