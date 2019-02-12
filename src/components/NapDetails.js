@@ -18,16 +18,16 @@ const NapDetails = (props) => {
         </div>
         <div className="content">
           <div className="header">
-            <Header as='h3'>{props.nap.name}</Header>
+            <Header as='h3' className="orange">{props.nap.name}</Header>
           </div>
           <div className="description">
-            <Header as='h4'>Location: {props.nap.location}</Header>
+            <Header as='h4' className="orange">Location: {props.nap.location}</Header>
             <div className="ui divider"></div>
-            <Header as='h4'>Description: {props.nap.description}</Header>
-            <Header as='h4'>Safety: {props.nap.safety}</Header>
+            <Header as='h4' className="orange">Description: {props.nap.description}</Header>
+            <Header as='h4' className="orange">Safety: {props.nap.safety}</Header>
             <div className="ui divider"></div>
             <div>
-               <Header as='h4'>Rate this location:</Header>
+               <Header as='h4' className="blue">Rate this location:</Header>
                <StarRatingComponent
                  name="rate1"
                  starCount={5}
